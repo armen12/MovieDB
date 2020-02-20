@@ -9,6 +9,7 @@
 import Foundation
 extension Bundle {
     
+    
     static func loadView<T>(withType type: T.Type) -> T {
         return Bundle.loadView(fromNib: String(describing: T.self), withType: T.self)
     }
