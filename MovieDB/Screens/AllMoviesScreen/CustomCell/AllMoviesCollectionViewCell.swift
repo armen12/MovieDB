@@ -7,12 +7,40 @@
 //
 
 import UIKit
-
+import SDWebImage
+protocol AllMoviesCollectionViewCelldelegate: class {
+    func openPoster(sender:AllMoviesCollectionViewCelldelegate, movie: Movie )
+}
 class AllMoviesCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var movieImage: UIImageView!
+    
+    weak var delegate: AllMoviesCollectionViewCelldelegate?
+    
+    override func prepareForReuse() {
+        self.movieImage.image = nil
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.movieImage.layer.cornerRadius = 10
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+
+        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.masksToBounds = false
+
+    }
+    func setupCell(item: Movie, delegate: AllMoviesCollectionViewCelldelegate?) -> Self{
+        self.delegate = delegate
+        if item.posterPath != "" {
+            self.movieImage.sd_setImage(with: URL(string:"http://image.tmdb.org/t/p/w342/\(item.posterPath)"))
+        }
+        return self
+    }
+
 
 }

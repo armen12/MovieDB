@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol  OneMovieDelegate:class {
+    func showDescription(movie: Movie)
+}

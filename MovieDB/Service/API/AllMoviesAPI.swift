@@ -7,3 +7,23 @@
 //
 
 import Foundation
+enum AllMoviesAPI{
+    case searchMovieByPage(page: Int)
+}
+
+extension AllMoviesAPI: Endpoint{
+  
+    var body: [String: String]{
+        switch self {
+        case let .searchMovieByPage(page: page):
+            return ["page" :"\(page)"]
+        }
+    }
+    
+    var path: String {
+        switch self {
+        case .searchMovieByPage:
+            return "/3/movie/now_playing"
+        }
+    }
+}
