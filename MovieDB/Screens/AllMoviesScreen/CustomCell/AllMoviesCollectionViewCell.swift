@@ -8,14 +8,14 @@
 
 import UIKit
 import SDWebImage
-protocol AllMoviesCollectionViewCelldelegate: class {
-    func openPoster(sender:AllMoviesCollectionViewCelldelegate, movie: Movie )
-}
+//protocol AllMoviesCollectionViewCelldelegate: class {
+//    func openPoster(sender:AllMoviesCollectionViewCell, movie: Movie )
+//}
 class AllMoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieImage: UIImageView!
     
-    weak var delegate: AllMoviesCollectionViewCelldelegate?
-    
+//    weak var delegate: AllMoviesCollectionViewCelldelegate?
+//    var movie: Movie!
     override func prepareForReuse() {
         self.movieImage.image = nil
     }
@@ -34,13 +34,10 @@ class AllMoviesCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
 
     }
-    func setupCell(item: Movie, delegate: AllMoviesCollectionViewCelldelegate?) -> Self{
-        self.delegate = delegate
+    func setupCell(item: Movie) -> Self{
         if item.posterPath != "" {
             self.movieImage.sd_setImage(with: URL(string:"http://image.tmdb.org/t/p/w342/\(item.posterPath)"))
         }
         return self
     }
-
-
 }

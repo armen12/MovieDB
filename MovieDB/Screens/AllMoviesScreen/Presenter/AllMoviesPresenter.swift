@@ -9,11 +9,13 @@
 
 import Foundation
 
-protocol AllMoviesDelegate:class {
+protocol AllMoviesDelegate: class{
+    
     func displayMovies(allMovies: [Movie] , page: Int)
 }
 
-class AllMoviesPresenter{
+class AllMoviesPresenter {
+    
     weak var delegate: AllMoviesDelegate?
     private let client: AllMovieServices
     init(client: AllMovieServices) {
@@ -34,6 +36,6 @@ class AllMoviesPresenter{
                 print(error)
             }
         }
-        
     }
 }
+

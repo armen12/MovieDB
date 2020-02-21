@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont(name: "ArialMT", size: 20)!, NSAttributedString.Key.foregroundColor : UIColor.gray]
-        
+        UINavigationBar.appearance().backgroundColor = .clear
         // Override point for customization after application launch.
         return true
     }

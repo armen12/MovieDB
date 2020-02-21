@@ -16,27 +16,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="176" height="276"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-Qu-16J">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-Qu-16J">
                         <rect key="frame" x="0.0" y="0.0" width="176" height="276"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkA-8n-BVk">
-                        <rect key="frame" x="0.0" y="0.0" width="176" height="276"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <action selector="openMovieButtonWasTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="sxG-pC-eEF"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="wkA-8n-BVk" secondAttribute="trailing" id="18g-lk-3zv"/>
                 <constraint firstItem="9gR-Qu-16J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5p7-zX-GiT"/>
                 <constraint firstAttribute="bottom" secondItem="9gR-Qu-16J" secondAttribute="bottom" id="9xK-lF-PSu"/>
-                <constraint firstItem="wkA-8n-BVk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ja7-iq-owi"/>
-                <constraint firstItem="wkA-8n-BVk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WOS-oU-qZg"/>
                 <constraint firstItem="9gR-Qu-16J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xav-55-dTV"/>
-                <constraint firstAttribute="bottom" secondItem="wkA-8n-BVk" secondAttribute="bottom" id="hoD-sX-XYF"/>
                 <constraint firstAttribute="trailing" secondItem="9gR-Qu-16J" secondAttribute="trailing" id="tOD-xa-e7o"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
