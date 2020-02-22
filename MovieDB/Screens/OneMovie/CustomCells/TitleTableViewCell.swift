@@ -22,30 +22,15 @@ class TitleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
     override func layoutSubviews() {
         moviewImageView.layer.cornerRadius = 15
         moviewImageView.clipsToBounds = true
+        
     }
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//         self.moviewImageView.layer.cornerRadius = 10
-////              self.layer.cornerRadius = 10
-////              self.layer.borderWidth = 1.0
-////              self.layer.borderColor = UIColor.lightGray.cgColor
-////
-////              self.layer.backgroundColor = UIColor.white.cgColor
-////              self.layer.shadowColor = UIColor.gray.cgColor
-////              self.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
-////              self.layer.shadowRadius = 2.0
-////              self.layer.shadowOpacity = 1.0
-//        self.moviewImageView.layer.masksToBounds = false
-//        self.moviewImageView.clipsToBounds = true
-//
-//    }
     
-    func setTitleCell(movie: Movie) -> Self{
+    func setTitleCell(movie: Movie) -> Self {
         if movie.posterPath != "" {
             self.moviewImageView.sd_setImage(with: URL(string:"http://image.tmdb.org/t/p/w342/\(movie.posterPath)"))
         }

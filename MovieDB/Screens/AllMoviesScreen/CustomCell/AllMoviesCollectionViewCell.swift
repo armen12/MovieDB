@@ -8,14 +8,10 @@
 
 import UIKit
 import SDWebImage
-//protocol AllMoviesCollectionViewCelldelegate: class {
-//    func openPoster(sender:AllMoviesCollectionViewCell, movie: Movie )
-//}
+
 class AllMoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieImage: UIImageView!
     
-//    weak var delegate: AllMoviesCollectionViewCelldelegate?
-//    var movie: Movie!
     override func prepareForReuse() {
         self.movieImage.image = nil
     }

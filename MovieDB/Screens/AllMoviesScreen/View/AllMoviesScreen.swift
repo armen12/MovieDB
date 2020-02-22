@@ -27,6 +27,8 @@ class AllMoviesScreen: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = .gray
         self.navigationItem.title = "Latest Movie"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"), style: .plain, target: self, action: nil)
+
         self.moviePresenter.getMoviesByPage(page: page)
     }
     
@@ -60,7 +62,6 @@ extension AllMoviesScreen: UICollectionViewDelegate, UICollectionViewDataSource{
         vc.movie = allMovies[indexPath.row]
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(vc, animated: false)
         
 
     }
@@ -75,6 +76,10 @@ extension AllMoviesScreen: UICollectionViewDelegateFlowLayout {
 }
 
 extension AllMoviesScreen: AllMoviesDelegate{
+    func presentAlert(alertMessage: String) {
+        self.alert(message: alertMessage)
+    }
+    
     
     func displayMovies(allMovies: [Movie], page: Int) {
         allMovies.forEach({self.allMovies.append($0)})

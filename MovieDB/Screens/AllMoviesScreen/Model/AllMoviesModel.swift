@@ -8,20 +8,22 @@
 
 
 import Foundation
+import RealmSwift
+
 
 // MARK: - Welcome
-struct AllMovies: Codable {
+class AllMovies: Codable {
     
-    let results: [Movie]
+    @objc dynamic var results: [Movie]
 }
 
-struct Movie: Codable {
-    let posterPath: String
-    let id: Int
-    let adult: Bool
-    let title: String
-    let voteAverage: Double
-    let overview, releaseDate: String
+class Movie: Object,  Codable {
+    @objc dynamic var posterPath: String
+    @objc dynamic var id: Int
+    @objc dynamic var adult: Bool
+    @objc dynamic var title: String
+    @objc dynamic var voteAverage: Double
+    @objc dynamic var overview, releaseDate: String
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"

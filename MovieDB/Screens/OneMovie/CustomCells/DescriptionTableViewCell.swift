@@ -9,11 +9,11 @@
 import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var movieDescription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
     func setDesritionCell(movie: Movie) -> Self{
         self.movieDescription.text = movie.overview
